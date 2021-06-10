@@ -4,6 +4,17 @@ from datetime import date
 from dotenv import load_dotenv
 from termcolor import colored
 
+"""
+Spotify Playlist Generator
+https://github.com/kolbyd/spotify-playlist-generator
+
+Developed by Kolby Dunning | kolbyd.ca
+This project is protected under the MIT license.
+
+Spotify's trademark and brand are property of Spotify Technology S.A.
+This software is not owned or supported by Spotify
+"""
+
 
 def chunks(l, n):
     for i in range(0, len(l), n):
@@ -56,7 +67,7 @@ while flag:
 
 # Check if the user wants the playlist to be public
 playlist_public = input(colored("Do you want the playlist to be public? (y/n)", "green") +
-                        colored(" [n] ", "yellow")) == "y"
+                        colored(" [n] ", "yellow")).lower() == "y"
 
 new_playlist = spotify.user_playlist_create(spotify.current_user()['id'],
                                             "Liked Songs - " + date.today().strftime("%m-%d-%Y"),
