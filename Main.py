@@ -56,7 +56,7 @@ while flag:
 
 # Check if the user wants the playlist to be public
 playlist_public = input(colored("Do you want the playlist to be public? (y/n)", "green") +
-                        colored(" [n] ", "yellow")) == "y"
+                        colored(" [n] ", "yellow")).lower() == "y"
 
 new_playlist = spotify.user_playlist_create(spotify.current_user()['id'],
                                             "Liked Songs - " + date.today().strftime("%m-%d-%Y"),
